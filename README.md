@@ -1,15 +1,19 @@
-###Implementation
+### Implementation
 
 In this exercise, you will have to write a Lambda function that sends an HTTP request every minute and records metrics for this request.
 
 You would have to generate two data points:
 
 If a request was successful or not
+
 Time it took to execute a request.
+
 To generate a single data point, you need to use the following code:
 
 await cloudwatch.putMetricData({
+  
   MetricData: [ // A list of data points to send
+    
     {
       MetricName: 'Success', // Name of a metric
       Dimensions: [ // A list of key-value pairs that can be used to filter metrics from CloudWatch
@@ -27,7 +31,7 @@ await cloudwatch.putMetricData({
 
 To call a function every minute, you would need to use CloudWatch Events as an event source for your Lambda function just as we did this in this lesson.
 
-###Build the project
+### Build the project
 
 Install dependencies by running the following command:
 
@@ -41,7 +45,7 @@ This should create a file called http-metrics.zip.
 
 You would also need to set correct IAM permissions for a Lambda function to send metrics to AWS CloudWatch. You can copy an IAM policy from the iam-policy.json file in this project.
 
-###Deployment
+### Deployment
 
 You need to deploy a .zip package to your Lambda function.
 
