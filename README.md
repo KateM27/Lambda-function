@@ -25,9 +25,7 @@ await cloudwatch.putMetricData({
       Unit: 'Count', // Unit of a metric
       Value: value // Value of a metric to store
     }
-  ],
-  
-  Namespace: 'Udacity/Serveless' // An isolated group of metrics
+  ], Namespace: 'Udacity/Serveless' // An isolated group of metrics
 }).promise()
 
 To call a function every minute, you would need to use CloudWatch Events as an event source for your Lambda function just as we did this in this lesson.
