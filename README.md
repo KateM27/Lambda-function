@@ -26,6 +26,7 @@ await cloudwatch.putMetricData({
       Value: value // Value of a metric to store
     }
   ],
+  
   Namespace: 'Udacity/Serveless' // An isolated group of metrics
 }).promise()
 
